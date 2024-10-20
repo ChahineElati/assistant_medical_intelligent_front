@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url("/assets/img/background-img.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white !important;
+}
+.navbar, .offcanvas {
+    background-color: #7777ad !important;
+}
+a, p, span {
+    color: white !important;
+    font-size: 1em !important;
+}
+
+#sidebar, .card {
+    text-align: center;
+}
+
+.lign {
+    height: 2px;
+    background-color: white;
+}
+
+.card {
+    background-color: #A3A4D4;
+}
+
+.btn {
+    color: white;
+    background-color: #7777ad;
+    border-radius: 25px;
+    border-color: #7777ad;
+    padding: 10px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

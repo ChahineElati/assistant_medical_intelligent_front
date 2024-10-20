@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'assistant_medical_intelligent_front';
+  authenticated = true;
+  constructor() {}
 }
