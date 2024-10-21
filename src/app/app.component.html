@@ -9,8 +9,7 @@
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
         </svg>
       </button>
-      <h2>Accueil</h2>
-      <!-- <span><b>Accueil</b></span> -->
+      <h2> {{pageTitle}} </h2>
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-bell-fill"
         viewBox="0 0 16 16">
         <path
@@ -28,31 +27,14 @@
         </div>
         <div id="sidebar" class="offcanvas-body">
           <ul class="navbar-nav flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" [routerLink]="['/']"
-                data-bs-dismiss="offcanvas"><b>Accueil</b></a>
-            </li>
-            <div class="lign"></div>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" [routerLink]="['/action']"
-                data-bs-dismiss="offcanvas"><b>Action</b></a>
-            </li>
-            <div class="lign"></div>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" [routerLink]="['/rendez-vous']"
-                data-bs-dismiss="offcanvas"><b>Rendez-vous</b></a>
-            </li>
-            <div class="lign"></div>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" [routerLink]="['/historique']"
-                data-bs-dismiss="offcanvas"><b>Historique</b></a>
-            </li>
-            <div class="lign"></div>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" [routerLink]="['/profil']"
-                data-bs-dismiss="offcanvas"><b>Profil</b></a>
-            </li>
-            <div class="lign"></div>
+            <div *ngFor="let navItem of navigation">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" [routerLink]="[navItem.link]" data-bs-dismiss="offcanvas"
+                  (click)="setPageTitle(navItem.page)"><b>
+                    {{navItem.page}} </b></a>
+              </li>
+              <div class="lign"></div>
+            </div>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" data-bs-dismiss="offcanvas"><b>Déconnexion</b></a>
             </li>
