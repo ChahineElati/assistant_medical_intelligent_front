@@ -38,7 +38,8 @@
             <br>
             <br>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" data-bs-dismiss="offcanvas"><b>Déconnexion</b></a>
+              <a class="nav-link" aria-current="page" data-bs-dismiss="offcanvas"
+                (click)="deconnecter()"><b>Déconnexion</b></a>
             </li>
             <div class="lign"></div>
           </ul>
@@ -73,9 +74,51 @@
             <input type="password" class="form-control" name="mdp" id="mdp" placeholder="••••••••">
           </div>
           <div class="d-grid">
-            <button type="button" class="btn">Se connecter</button>
+            <button type="button" class="btn" (click)="seConnecter()">Se connecter</button>
             <br>
-            <button type="button" class="btn">Créer un compte</button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#creation_compte">Créer
+              un compte</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="creation_compte" tabindex="-1" aria-labelledby="creation_compte"
+              aria-hidden="true" style="color: black;">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable .modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Créer un nouveau compte</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" class="form-control" name="nom" id="nom">
+                      </div>
+                      <div class="mb-3">
+                        <label for="prenom_creation" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" name="prenom_creation" id="prenom_creation">
+                      </div>
+                      <div class="mb-3">
+                        <label for="email_creation" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email_creation" id="email_creation">
+                      </div>
+                      <div class="mb-3">
+                        <label for="mdp_creation" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" name="mdp_creation" id="mdp_creation" placeholder="••••••••">
+                      </div>
+                      <div class="mb-3">
+                        <label for="date_nais_creation" class="form-label">Date de naissance</label>
+                        <input type="date" class="form-control" name="date_nais_creation" id="date_nais_creation">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn">Confirmer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>

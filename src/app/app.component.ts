@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'assistant_medical_intelligent_front';
-  authenticated = true;
+  authenticated = false;
   pageTitle: String = "Accueil";
   navigation = [
     {
@@ -32,9 +33,20 @@ export class AppComponent {
     }
   ]
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   setPageTitle(title: String) {
     this.pageTitle = title;
   }
+
+  seConnecter() {
+    this.authenticated = true;
+    this.router.navigate(['/']);
+    this.pageTitle = "Accueil";
+  }
+
+  deconnecter() {
+    this.authenticated = false;
+  }
+
 }
