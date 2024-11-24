@@ -6,3 +6,8 @@ p {
     background-color: #A3A4D4 !important;
     width: 250px;
 }
+
+button.rendez-vous {
+    background-color: #7777ad;
+    border-radius: 10px;
+}
