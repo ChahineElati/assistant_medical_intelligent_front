@@ -1,0 +1,13 @@
+.med {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.med-pris {
+    background-color: #2eff5b;
+}
+
+.med-rate {
+    background-color: #ff2e2e;
+}

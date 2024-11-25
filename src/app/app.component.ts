@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'assistant_medical_intelligent_front';
-  authenticated = false;
+  authenticated = true;
   pageTitle: String = "Accueil";
   navigation = [
     {
@@ -46,7 +46,7 @@ export class AppComponent {
   }
 
   deconnecter() {
-    this.authenticated = false;
+    // this.authenticated = false;
   }
 
 }
