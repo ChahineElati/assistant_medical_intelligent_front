@@ -23,7 +23,7 @@ export class AppComponent {
     password: "",
   }
 
-  authenticated = false;
+  authenticated = true;
 
   badLogin = false;
 
@@ -58,12 +58,14 @@ export class AppComponent {
   }
 
   seConnecter() {
-    console.log(this.personneLogin.email);
     this.personneService.login(this.personneLogin).subscribe((data: any) => {
       if (data!=null) {
         this.authenticated = true;
         this.router.navigate(['/']);
         this.pageTitle = "Accueil";
+        this.badLogin = false;
+        this.personneLogin.email = "";
+        this.personneLogin.password = "";
         localStorage.setItem("id", data.id);
       } else {
         this.badLogin = true;
