@@ -67,12 +67,13 @@
         <form style="margin-top: 30px;">
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="foulen@gmail.com">
+            <input [(ngModel)]="personneLogin.email" type="email" class="form-control" name="email" id="email" placeholder="foulen@gmail.com">
           </div>
           <div class="mb-3">
             <label for="mdp" class="form-label">Mot de passe</label>
-            <input type="password" class="form-control" name="mdp" id="mdp" placeholder="••••••••">
+            <input [(ngModel)]="personneLogin.password" type="password" class="form-control" name="mdp" id="mdp" placeholder="••••••••">
           </div>
+          <p *ngIf="badLogin" style="color: crimson !important;"> <b>Erreur survenu, vérifier votre email ou mot de passe!</b></p>
           <div class="d-grid">
             <button type="button" class="btn" (click)="seConnecter()">Se connecter</button>
             <br>

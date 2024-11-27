@@ -117,7 +117,42 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="col-12 text-center">
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#ajout_med">Ajouter Médicament</button>
+            <div class="modal fade" id="ajout_med" tabindex="-1" aria-labelledby="ajout_med"
+                aria-hidden="true" style="color: black;">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable .modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Créer un nouveau compte</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="nom_med" class="form-label">Nom du médicament</label>
+                                    <input type="text" [(ngModel)]="med.nom" class="form-control"
+                                        name="nom_med" id="nom_med">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="posologie" class="form-label">Posologie</label>
+                                    <input type="text" [(ngModel)]="med.posologie" class="form-control"
+                                        name="posologie" id="posologie" placeholder="exemple : 2 comprimés par jour">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="heure_prise" class="form-label">Heure de prise</label>
+                                    <input type="datetime-local" [(ngModel)]="med.heurePrise" class="form-control"
+                                        name="heure_prise" id="heure_prise">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

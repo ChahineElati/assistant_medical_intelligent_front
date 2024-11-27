@@ -15,4 +15,8 @@ export class PersonneService {
     return this.http.post(this.apiBaseURL + "/personnes/create", personne);
   }
 
+  login(personneLogin: any) {
+    return this.http.post(this.apiBaseURL + "/personnes/login", personneLogin)
+  }
+
 }

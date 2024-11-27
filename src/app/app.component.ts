@@ -18,7 +18,15 @@ export class AppComponent {
     dateNaissance: new Date(),
   }
 
+  personneLogin = {
+    email: "",
+    password: "",
+  }
+
   authenticated = false;
+
+  badLogin = false;
+
   pageTitle: String = "Accueil";
   navigation = [
     {
@@ -50,13 +58,22 @@ export class AppComponent {
   }
 
   seConnecter() {
-    this.authenticated = true;
-    this.router.navigate(['/']);
-    this.pageTitle = "Accueil";
+    console.log(this.personneLogin.email);
+    this.personneService.login(this.personneLogin).subscribe((data: any) => {
+      if (data!=null) {
+        this.authenticated = true;
+        this.router.navigate(['/']);
+        this.pageTitle = "Accueil";
+        localStorage.setItem("id", data.id);
+      } else {
+        this.badLogin = true;
+      }
+    });
   }
 
   deconnecter() {
-    // this.authenticated = false;
+    this.authenticated = false;
+    localStorage.removeItem("id");
   }
 
   creer() {
