@@ -15,4 +15,8 @@ export class MedicamentService {
     return this.http.post(this.apiBaseURL + "/medicaments/personne/" + id + "/ajouter", medicament);
   }
 
+  getMedicaments(id: number) {
+    return this.http.get(this.apiBaseURL + "/medicaments/personne/" + id);
+  }
+
 }
