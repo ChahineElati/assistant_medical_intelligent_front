@@ -23,7 +23,7 @@ export class AppComponent {
     password: "",
   }
 
-  authenticated = true;
+  authenticated = false;
 
   badLogin = false;
 
