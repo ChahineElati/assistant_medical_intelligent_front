@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { MedicamentService } from 'src/app/services/medicament.service';
 
 @Component({
   selector: 'app-accueil',
@@ -10,12 +11,16 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class AccueilComponent {
 
   dates = [
-    new Date("2024-11-17"),
-    new Date("2024-11-16"),
-    new Date("2024-11-18"),
-    new Date("2024-11-19"),
-    new Date("2024-11-15"),
+    new Date("2024-12-17"),
+    new Date("2024-12-16"),
+    new Date("2024-12-18"),
+    new Date("2024-12-19"),
+    new Date("2024-12-15"),
   ];
+
+  medicament: any = {}
+
+  constructor(private medicamentService : MedicamentService) {}
 
   dateClass = (date: Date): string => {
     const highlight = this.dates.some(
@@ -25,4 +30,14 @@ export class AccueilComponent {
     );
     return highlight ? 'rendez-vous' : '';
   };
+
+  ngOnInit() {
+    let idPersonne = localStorage.getItem("id");
+    this.medicamentService.getMedicaments(Number.parseInt(idPersonne!)).subscribe(
+      (data: any) => {
+        data = data.filter((item: any) => item.prise==false);
+        this.medicament = data[0];
+      }
+    );
+  }
 }

@@ -3,7 +3,7 @@
         <div class="card text-white mb-3"
             style="max-width: 18rem; border-radius: 25px; margin-top: 10px; padding-left: 15px; padding-right: 15px;">
             <div class="card-body">
-                <p>Vous avez le médicament <b>"Med"</b> à prendre à <b>20h</b></p>
+                <p>Vous avez le médicament <b>"{{medicament.nom}}"</b> à prendre <b>le {{medicament.heurePrise | date}} à {{medicament.heurePrise | date : 'H'}}H</b></p>
             </div>
         </div>
     </div>
@@ -17,8 +17,13 @@
 </div>
 <div class="row" style="padding: 25px;">
     <div class="col d-flex justify-content-center">
-        <button type="button" class="btn" style="padding-left: 30px; padding-right: 30px;">Historique</button>
+        <a [routerLink]="['/historique']">
+            <button type="button" class="btn" style="padding-left: 30px; padding-right: 30px;">Historique</button>
+        </a>
         &nbsp;&nbsp;
-        <button type="button" class="btn" style="padding-left: 40px; padding-right: 40px;">Action</button>
+        <a [routerLink]="['/action']">
+            <button type="button" class="btn" style="padding-left: 40px; padding-right: 40px;">Action</button>
+        </a>
+
     </div>
 </div>
