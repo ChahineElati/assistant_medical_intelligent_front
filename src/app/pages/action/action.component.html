@@ -14,7 +14,9 @@
                     </div>
                     <div class="row g-3">
                         <div class="col-12 text-center d-grid gap-2">
-                            <button class="btn btn-primary" type="button">Marquer comme pris</button>
+                            <button class="btn btn-primary" type="button"
+                                (click)="prendreMedicament(medicament.id, medicament.heurePrise)">Marquer comme
+                                pris</button>
                         </div>
                         <div class="lign" style="margin-bottom: 20px;"></div>
                     </div>
